@@ -99,7 +99,7 @@ const Default = () => {
                     className="social-wrapper social-empact d-flex align-items-start" 
                     style={{justifyContent:"space-between", gap: "0.5rem"}}
                   >
-                    <a 
+                    {/* <a 
                       href="https://www.facebook.com/profile.php?id=61571383490221" 
                       target="_blank" 
                       rel="noopener noreferrer" 
@@ -107,7 +107,7 @@ const Default = () => {
                       aria-label="Facebook"
                     >
                       <i className="white-clr fab fa-facebook-f"></i>
-                    </a>
+                    </a> */}
                     <a 
                       href="https://www.instagram.com/shalimarfarms/" 
                       target="_blank" 

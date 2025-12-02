@@ -69,7 +69,7 @@ export default function BreedersShowcase() {
                 <Calendar size={20} />
                 Schedule Farm Visit
               </a>
-              <a href="tel:+919876543210" className="btn-outline-custom">
+              <a href="tel:+91-9860440277" className="btn-outline-custom">
                 <Phone size={20} />
                 Call Us Now
               </a>

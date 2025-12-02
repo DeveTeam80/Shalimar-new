@@ -35,14 +35,14 @@ const Sidebar = ({ show, handleClose }) => {
                   <h6>Follow Us</h6>
                   <ul className="social-link">
                     <li>
-                      <a
+                      {/* <a
                         href="https://www.facebook.com/profile.php?id=61571383490221"
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Facebook"
                       >
                         <i className="fab fa-facebook-f" />
-                      </a>
+                      </a> */}
                     </li>
                     <li>
                       <a

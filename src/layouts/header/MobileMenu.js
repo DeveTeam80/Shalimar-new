@@ -67,7 +67,7 @@ const MobileMenu = ({ handleShow, logo, extraClass, barIcon }) => {
               <div className="mobile-social-links mt-40 mb-30">
                 <h6 className="mb-3">Follow Us</h6>
                 <div className="d-flex gap-3">
-                  <a 
+                  {/* <a 
                     href="https://www.facebook.com/profile.php?id=61571383490221" 
                     target="_blank" 
                     rel="noopener noreferrer"
@@ -75,7 +75,7 @@ const MobileMenu = ({ handleShow, logo, extraClass, barIcon }) => {
                     aria-label="Facebook"
                   >
                     <i className="fab fa-facebook-f"></i>
-                  </a>
+                  </a> */}
                   <a 
                     href="https://www.instagram.com/shalimarfarms/" 
                     target="_blank" 

@@ -1,12 +1,8 @@
 import Link from "next/link";
 import { Fragment, useState } from "react";
+
 const MobileMenu = ({ handleShow, logo, extraClass, barIcon }) => {
   const [toggle, setToggle] = useState(false);
-
-  const [activeMenu, setActiveMenu] = useState(null);
-  const active = (value) => setActiveMenu(value === activeMenu ? null : value),
-    activeSubMenu = (value) =>
-      value == activeMenu ? { display: "block" } : { display: "none" };
 
   return (
     <Fragment>
@@ -25,7 +21,7 @@ const MobileMenu = ({ handleShow, logo, extraClass, barIcon }) => {
                 <a className="brand-logo">
                   <img
                     src={logo ? logo : "assets/images/logo/logo-black.png"}
-                    alt="Site Logo"
+                    alt="Shalimar Farms Logo"
                   />
                 </a>
               </Link>
@@ -38,207 +34,103 @@ const MobileMenu = ({ handleShow, logo, extraClass, barIcon }) => {
                   <a className="brand-logo">
                     <img
                       src={"assets/images/logo/logo-black.png"}
-                      alt="Site Logo"
+                      alt="Shalimar Farms Logo"
                     />
                   </a>
                 </Link>
               </div>
-              {/*=== Nav Search ===*/}
-              <div className="nav-search mb-30 d-block d-xl-none ">
-                <form onSubmit={(e) => e.preventDefault()}>
-                  <div className="form_group">
-                    <input
-                      type="email"
-                      className="form_control"
-                      placeholder="Search Here"
-                      name="email"
-                      required
-                    />
-                    <button className="search-btn">
-                      <i className="fas fa-search" />
-                    </button>
-                  </div>
-                </form>
-              </div>
+              
               {/*====== main Menu ======*/}
               <nav className="main-menu">
                 <ul>
-                  <li className="menu-item has-children">
-                    <a href="#">
-                      Home
-                      <span
-                        className="dd-trigger"
-                        onClick={() => active("home")}
-                      >
-                        <i className="far fa-angle-down" />
-                      </span>
-                    </a>
-                    <ul className="sub-menu" style={activeSubMenu("home")}>
-                      <li>
-                        <Link legacyBehavior href="/">
-                          Home 01
-                        </Link>
-                      </li>
-                      <li>
-                        <Link legacyBehavior href="index-2">
-                          Home 02
-                        </Link>
-                      </li>
-                      <li>
-                        <Link legacyBehavior href="index-3">
-                          Home 03
-                        </Link>
-                      </li>
-                    </ul>
-                  </li>
                   <li className="menu-item">
-                    <Link legacyBehavior href="about">
-                      About
+                    <Link legacyBehavior href="/">
+                      <a>Home</a>
                     </Link>
                   </li>
-                  <li className="menu-item has-children">
-                    <a href="#">
-                      Service
-                      <span
-                        className="dd-trigger"
-                        onClick={() => active("Service")}
-                      >
-                        <i className="far fa-angle-down" />
-                      </span>
-                    </a>
-                    <ul className="sub-menu" style={activeSubMenu("Service")}>
-                      <li>
-                        <Link legacyBehavior href="service">
-                          Our Service
-                        </Link>
-                      </li>
-                      <li>
-                        <Link legacyBehavior href="service-details">
-                          Service Details
-                        </Link>
-                      </li>
-                    </ul>
+                  <li className="menu-item">
+                    <a href="/#about">About Us</a>
                   </li>
-                  <li className="menu-item has-children">
-                    <a href="#">
-                      Portfolio
-                      <span
-                        className="dd-trigger"
-                        onClick={() => active("Portfolio")}
-                      >
-                        <i className="far fa-angle-down" />
-                      </span>
-                    </a>
-                    <ul className="sub-menu" style={activeSubMenu("Portfolio")}>
-                      <li>
-                        <Link legacyBehavior href="project-grid">
-                          Project Grid
-                        </Link>
-                      </li>
-                      <li>
-                        <Link legacyBehavior href="project-grid-2-column">
-                          Project Grid Two
-                        </Link>
-                      </li>
-                      <li>
-                        <Link legacyBehavior href="project-masonry">
-                          Project Masonry
-                        </Link>
-                      </li>
-                      <li>
-                        <Link legacyBehavior href="project-details">
-                          Project Details
-                        </Link>
-                      </li>
-                    </ul>
+                  <li className="menu-item">
+                    <a href="/#sultan">Sultan-E-Hind</a>
                   </li>
-                  <li className="menu-item has-children">
-                    <a href="#">
-                      Blog
-                      <span
-                        className="dd-trigger"
-                        onClick={() => active("Blog")}
-                      >
-                        <i className="far fa-angle-down" />
-                      </span>
-                    </a>
-                    <ul className="sub-menu" style={activeSubMenu("Blog")}>
-                      <li>
-                        <Link legacyBehavior href="blog-standard">
-                          Blog Standard
-                        </Link>
-                      </li>
-                      <li>
-                        <Link legacyBehavior href="blog-details">
-                          Blog Details
-                        </Link>
-                      </li>
-                    </ul>
+                  <li className="menu-item">
+                    <a href="/#kota-breed">Kota Breed</a>
                   </li>
-                  <li className="menu-item has-children">
-                    <a href="#">
-                      Pages
-                      <span
-                        className="dd-trigger"
-                        onClick={() => active("Pages")}
-                      >
-                        <i className="far fa-angle-down" />
-                      </span>
-                    </a>
-                    <ul className="sub-menu" style={activeSubMenu("Pages")}>
-                      <li>
-                        <Link legacyBehavior href="team">
-                          Our Team
-                        </Link>
-                      </li>
-                      <li>
-                        <Link legacyBehavior href="shop">
-                          Our Shop
-                        </Link>
-                      </li>
-                      <li>
-                        <Link legacyBehavior href="product-details">
-                          Product Details
-                        </Link>
-                      </li>
-                      <li>
-                        <Link legacyBehavior href="testimonials">
-                          Testimonial
-                        </Link>
-                      </li>
-                      <li>
-                        <Link legacyBehavior href="pricing">
-                          Pricing
-                        </Link>
-                      </li>
-                      <li>
-                        <Link legacyBehavior href="faqs">
-                          Faq
-                        </Link>
-                      </li>
-                      <li>
-                        <Link legacyBehavior href="contact">
-                          Contact
-                        </Link>
-                      </li>
-                    </ul>
+                  <li className="menu-item">
+                    <a href="/#contact">Contact</a>
                   </li>
                 </ul>
               </nav>
-              {/*====== Menu Button ======*/}
-              <div className="menu-button mt-40 d-xl-none">
-                <Link legacyBehavior href="/contact">
-                  <a className="main-btn secondary-btn">Contact Us</a>
-                </Link>
+
+              {/*====== Social Links ======*/}
+              <div className="mobile-social-links mt-40 mb-30">
+                <h6 className="mb-3">Follow Us</h6>
+                <div className="d-flex gap-3">
+                  <a 
+                    href="https://www.facebook.com/profile.php?id=61571383490221" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="social-icon"
+                    aria-label="Facebook"
+                  >
+                    <i className="fab fa-facebook-f"></i>
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/shalimarfarms/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="social-icon"
+                    aria-label="Instagram"
+                  >
+                    <i className="fab fa-instagram"></i>
+                  </a>
+                  <a 
+                    href="https://www.youtube.com/@shalimarfarms" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="social-icon"
+                    aria-label="YouTube"
+                  >
+                    <i className="fab fa-youtube"></i>
+                  </a>
+                  <a 
+                    href="https://wa.me/919860440277" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="social-icon"
+                    aria-label="WhatsApp"
+                  >
+                    <i className="fab fa-whatsapp"></i>
+                  </a>
+                </div>
+              </div>
+
+              {/*====== Contact Info ======*/}
+              <div className="mobile-contact-info">
+                <div className="mb-2">
+                  <a href="tel:+919860440277" className="d-flex align-items-center">
+                    <i className="far fa-phone-plus mr-2"></i>
+                    +91 98604 40277 (Safdar)
+                  </a>
+                </div>
+                <div className="mb-2">
+                  <a href="tel:+919970838221" className="d-flex align-items-center">
+                    <i className="far fa-phone-plus mr-2"></i>
+                    +91 99708 38221 (Zaid)
+                  </a>
+                </div>
+                <div className="mb-2">
+                  <a href="mailto:info@shalimarfarms.com" className="d-flex align-items-center">
+                    <i className="far fa-envelope mr-2"></i>
+                    info@shalimarfarms.com
+                  </a>
+                </div>
               </div>
             </div>
+
             {/*====== Nav Right Item ======*/}
             <div className="nav-right-item d-flex align-items-center">
-              <div className="menu-button d-xl-block d-none">
-                <Link legacyBehavior href="/contact">
-                  <a className="main-btn primary-btn">Contact Us</a>
-                </Link>
-              </div>
               <div
                 className="bar-button"
                 data-toggle="modal"
@@ -247,7 +139,7 @@ const MobileMenu = ({ handleShow, logo, extraClass, barIcon }) => {
               >
                 <img
                   src={barIcon ? barIcon : "assets/images/bar.png"}
-                  alt="Image"
+                  alt="Menu"
                 />
               </div>
               <div

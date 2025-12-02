@@ -14,11 +14,36 @@ import { TbRulerMeasure, TbRulerMeasure2 } from "react-icons/tb";
 import { IoDiamond } from "react-icons/io5";
 import { PiTargetBold } from "react-icons/pi";
 import { PiFarm } from "react-icons/pi";
-import { GiWeight } from "react-icons/gi";
+import { Crown } from "lucide-react";
+import { Instagram, Play } from 'lucide-react';
+import { FaInstagram, FaYoutube } from 'react-icons/fa';
+import VisionSection from "@/src/components/VisionSection";
+import BreedersShowcase from "@/src/components/BreedersShowcase";
+import ContactModal from "@/src/components/ContactModal";
+import { useState } from "react";
+
+
 
 const Index2 = () => {
+  const [showContactModal, setShowContactModal] = useState(false);
+
+  const handleShowContact = () => {
+    console.log("Button clicked!");
+    setShowContactModal(true);
+    console.log("Modal state set to true");
+  };
+
+  const handleCloseContact = () => {
+    console.log("Closing modal");
+    setShowContactModal(false);
+  };
+
+  console.log("Current modal state:", showContactModal);
+
   return (
     <Layout>
+      <ContactModal show={showContactModal} handleClose={handleCloseContact} />
+
       {/*====== Start Banner Section ======*/}
       <section className="banner-section">
         {/*====== Hero Wrapper One ======*/}
@@ -40,7 +65,7 @@ const Index2 = () => {
                     data-animation="fadeInDown"
                     data-delay=".5s"
                   >
-                    We Don’t Just Raise Goats. <br /> We Raise G.O.A.T.s.
+                    We Don't Just Raise Goats. <br /> We Raise G.O.A.T.s.
                   </h2>
                   <span
                     className="sub-title"
@@ -57,167 +82,11 @@ const Index2 = () => {
       </section>
       {/*====== End Banner Section ======*/}
       {/*====== Start CTA Section  ======*/}
-      <section className="bg_cover pt-50 p-r z-1">
-        <div className="container">
-          <div className="row align-items-end">
-            <div className="col-lg-6">
-              {/*======  CTA Content Box  ======*/}
-              <div className="about-two_content-box pb-20 wow fadeInRight">
-                <div className="section-title">
-                  <div className="section-title mb-50">
-                    <span className="sub-title">
-                      <PiTargetBold size={30} className="me-4" />
-                      One Shared Vision. One Rare Breed.
-                    </span>
-                    <h2>Meet Safdar & Zaid</h2>
-                  </div>
-                  <p className="mb-45">
-                    Two visionaries who built a legacy of Kota excellence
-                    through pure experience and uncompromising dedication.
-                    Dedicated, instinctive, and relentlessly passionate, the
-                    founders personally oversee every pairing, every birth, and
-                    every health decision. Their hands-on approach shapes the
-                    quality that Shalimar Farms is known for.
-                  </p>
-                  <div className="about-inner-content d-flex justify-content-between">
-                    <div className="inner-content">
-                      <ul className="check-style-one mb-45">
-                        <li>
-                          <i className="far fa-check" />
-                          Minute daily observation of growth, temperament, and
-                          individual traits.
-                        </li>
-                        <li>
-                          <i className="far fa-check" />
-                          Guided by instinct, refinement, and decades of
-                          heritage knowledge.
-                        </li>
-                      </ul>
-                      <Link legacyBehavior href="/about">
-                        <a className="main-btn primary-btn">Learn More</a>
-                      </Link>
-                    </div>
-                    <div className="experience-box-two">
-                      <h2 className="number">
-                        <Counter end={25} />+
-                      </h2>
-                      <h6>Years of Mastery</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-6 pl-0">
-              {/*======  CTA Image Box  ======*/}
-              <div className="cta-image-box wow fadeInRight">
-                <img src="/assets/images/hero/founders.png" alt="Image" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
       {/*====== End CTA Section  ======*/}
       {/*====== Start Features Section  ======*/}
-      <section className="bg_cover pb-50 p-r z-1">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-6 pr-0">
-              {/*======  CTA Image Box  ======*/}
-              <div className="cta-image-box mb-50 wow fadeInRight">
-                <img src="/assets/images/hero/aboutv6.png" alt="Image" />
-              </div>
-            </div>
-            <div className="col-lg-6">
-              {/*======  CTA Content Box  ======*/}
-              <div className="about-two_content-box pb-20 wow fadeInRight">
-                <div className="section-title">
-                  <div className="section-title mb-50">
-                    <span className="sub-title">
-                      <IoDiamond size={30} className="me-3" />A G.O.A.T That
-                      Redefined Kota Standards
-                    </span>
-                    <h2>Sultan -E- Hind</h2>
-                  </div>
-                  <p className="mb-45">
-                    Sultan-e-Hind wasn’t just a stud, he was a benchmark. His
-                    lineage remains the backbone of our breeding program,
-                    influencing every generation we raise.
-                  </p>
-                  <div className="about-inner-content d-flex justify-content-between">
-                    <div className="inner-content">
-                      <ul className="check-style-one mb-45">
-                        <li>
-                          <i className="far fa-check" />
-                          Exceptional body length
-                        </li>
-                        <li>
-                          <i className="far fa-check" />
-                          Rare horn structure
-                        </li>
-                        <li>
-                          <i className="far fa-check" />
-                          Masculine frame & dominant presence
-                        </li>
-                        <li>
-                          <i className="far fa-check" />
-                          Produced India’s most consistent Kota offspring
-                        </li>
-                      </ul>
-                    </div>
-                    {/* <div className="experience-box-two">
-                      <h2 className="number">
-                        <Counter end={25} />+
-                      </h2>
-                      <h6>Years of Mastery</h6>
-                    </div> */}
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-12 features-area pb-30">
-              <div className="row justify-content-center">
-                {/*=== Height ===*/}
-                <div className="col-lg-4 col-md-6 col-sm-6">
-                  <div className="single-features-item-two mb-40 wow fadeInUp">
-                    <div className="text">
-                      <div className="icon">
-                        <TbRulerMeasure2 size={40} color="#fff" />
-                        <h5 className="title text-white">Height: 43 inches</h5>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/*=== Weight ===*/}
-                <div className="col-lg-4 col-md-6 col-sm-6">
-                  <div className="single-features-item-two mb-40 wow fadeInDown">
-                    <div className="text">
-                      <div className="icon">
-                        <GiWeight size={40} color="#fff" />
-                        <h5 className="title text-white">Weight: 145 kg</h5>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/*=== Ear Length ===*/}
-                <div className="col-lg-4 col-md-6 col-sm-6">
-                  <div className="single-features-item-two mb-40 wow fadeInUp">
-                    <div className="text">
-                      <div className="icon">
-                        <TbRulerMeasure size={40} color="#fff" />
-                        <h5 className="title text-white">
-                          Ear Length: 22 inches
-                        </h5>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <VisionSection />
+      <BreedersShowcase />
       {/*====== End Features Section  ======*/}
       {/*====== Start Choose Section  ======*/}
       <section
@@ -256,14 +125,14 @@ const Index2 = () => {
                                 Shalimar Farms stands at the intersection of
                                 heritage, expertise, and scientific care. What
                                 began as childhood fascination has evolved into
-                                one of India’s most respected Kota goat breeding
+                                one of India's most respected Kota goat breeding
                                 ventures.
                               </p>
                               <p>
                                 With over two decades of experience, we preserve
                                 the true Kota bloodline of Rajasthan through
                                 selective breeding, ethical practices, and deep
-                                practical knowledge. Our farm isn’t built on
+                                practical knowledge. Our farm isn't built on
                                 mass production, but on exclusivity, purity, and
                                 sustainable breeding excellence. Every goat
                                 raised here reflects our commitment to
@@ -301,10 +170,10 @@ const Index2 = () => {
             <div className="col-lg-6">
               <div className="section-title mb-55 wow fadeInLeft">
                 <span className="sub-title">
-                  <i className="flaticon-plant" />
-                  What We Do For Gardening
+                  <Crown size={24} className="me-2" />
+                  Understanding the Kota Breed
                 </span>
-                <h2>The Kota Breed, Why It’s Rare?</h2>
+                <h2>The Kota Breed, Why It's Rare?</h2>
               </div>
             </div>
             <div className="col-lg-6">
@@ -337,7 +206,7 @@ const Index2 = () => {
                   <p>
                     Kota goats carry generations of distinct structure,
                     markings, and temperament. Their refined presence and deep
-                    cultural roots make them a true symbol of Rajasthan’s
+                    cultural roots make them a true symbol of Rajasthan's
                     pastoral heritage.
                   </p>
                 </div>
@@ -361,7 +230,7 @@ const Index2 = () => {
                   <p>
                     Pure-line Kota goats are known for their natural, drooping
                     long ears measuring 22–23 inches. Our prime male proudly
-                    carries a 28-inch span, placing him among India’s finest
+                    carries a 28-inch span, placing him among India's finest
                     Kota specimens.
                   </p>
                 </div>
@@ -619,204 +488,154 @@ const Index2 = () => {
         </div>
       </section>
 
-      {/*====== End Services Section ======*/}
-      {/*Instagram and Youtube Section*/}
-      <section className="project-section">
-        <div className="row justify-content-center">
-          <div className="col-lg-10">
-            <div className="section-title text-center mb-10 wow fadeInDown">
-              <h2>See The Legacy in Motion</h2>
+
+      {/*====== Instagram and Youtube Section ======*/}
+      <section className="project-section pt-95 pb-70">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-8">
+              <div className="section-title text-center mb-60 wow fadeInDown">
+                <span className="sub-title">
+                  <FaInstagram size={24} className="me-2" />
+                  Follow Our Journey
+                </span>
+                <h2>See The Legacy in Motion</h2>
+                <p className="mt-3">
+                  Follow us on Instagram and YouTube for daily updates, behind-the-scenes moments, and the latest from Shalimar Farms.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
         <div className="container-fluid">
-          {/*====== Project Slider ======*/}
+          {/*====== Instagram Slider ======*/}
           <Slider
             {...sliderProps.projectsSliderFour}
-            className="projects-slider-four wow fadeInUp"
+            className="instagram-slider wow fadeInUp"
             data-wow-delay=".2s"
           >
-            {/*====== Project Item ======*/}
-            <div className="single-project-item-four">
-              <div className="project-img">
+            {/*====== Instagram Post 1 ======*/}
+            <div className="single-instagram-item">
+              <div className="instagram-img-wrapper">
                 <img
                   src="/assets/images/instagram/9d478dc3-c75d-4030-b00c-2150f7298b37.jpg"
-                  alt="Project Image"
+                  alt="Shalimar Farms Instagram Post"
                 />
-                {/* <div className="hover-content">
-                  <div className="number">01</div>
-                  <div className="text text-white">
-                    <h3 className="title">
-                      <Link legacyBehavior href="/project-details">
-                        <a>Water in Garden</a>
-                      </Link>
-                    </h3>
-                    <p>Professional Gardener for Garden Care</p>
-                    <Link legacyBehavior href="/project-details">
-                      <a className="icon-btn">
-                        <i className="fal fa-long-arrow-right" />
-                      </a>
-                    </Link>
-                  </div>
+                <div className="instagram-overlay">
+                  <a
+                    href="https://www.instagram.com/shalimarfarms/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="instagram-link"
+                  >
+                    <FaInstagram size={40} />
+                    <span>View on Instagram</span>
+                  </a>
                 </div>
-                <div className="project-content">
-                  <div className="text text-white">
-                    <h3 className="title">
-                      <Link legacyBehavior href="/project-details">
-                        <a>Garden Caring</a>
-                      </Link>
-                    </h3>
-                  </div>
-                </div> */}
               </div>
             </div>
-            {/*====== Project Item ======*/}
-            <div className="single-project-item-four">
-              <div className="project-img">
+
+            {/*====== Instagram Post 2 ======*/}
+            <div className="single-instagram-item">
+              <div className="instagram-img-wrapper">
                 <img
                   src="/assets/images/instagram/b5ddbfba-cfad-4660-a6ed-7ddea502d9df.jpg"
-                  alt="Project Image"
+                  alt="Shalimar Farms Instagram Post"
                 />
-                {/* <div className="hover-content">
-                  <div className="number">02</div>
-                  <div className="text text-white">
-                    <h3 className="title">
-                      <Link legacyBehavior href="/project-details">
-                        <a>Water in Garden</a>
-                      </Link>
-                    </h3>
-                    <p>Professional Gardener for Garden Care</p>
-                    <Link legacyBehavior href="/project-details">
-                      <a className="icon-btn">
-                        <i className="fal fa-long-arrow-right" />
-                      </a>
-                    </Link>
-                  </div>
+                <div className="instagram-overlay">
+                  <a
+                    href="https://www.instagram.com/shalimarfarms/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="instagram-link"
+                  >
+                    <FaInstagram size={40} />
+                    <span>View on Instagram</span>
+                  </a>
                 </div>
-                <div className="project-content">
-                  <div className="text text-white">
-                    <h3 className="title">
-                      <Link legacyBehavior href="/project-details">
-                        <a>Water in Garden</a>
-                      </Link>
-                    </h3>
-                  </div>
-                </div> */}
               </div>
             </div>
-            {/*====== Project Item ======*/}
-            <div className="single-project-item-four">
-              <div className="project-img">
+
+            {/*====== Instagram Post 3 ======*/}
+            <div className="single-instagram-item">
+              <div className="instagram-img-wrapper">
                 <img
                   src="/assets/images/instagram/4003583e-c04f-4f7b-901d-bfe2332296f6.jpg"
-                  alt="Project Image"
+                  alt="Shalimar Farms Instagram Post"
                 />
-                {/* <div className="hover-content">
-                  <div className="number">03</div>
-                  <div className="text text-white">
-                    <h3 className="title">
-                      <Link legacyBehavior href="/project-details">
-                        <a>Water in Garden</a>
-                      </Link>
-                    </h3>
-                    <p>Professional Gardener for Garden Care</p>
-                    <Link legacyBehavior href="/project-details">
-                      <a className="icon-btn">
-                        <i className="fal fa-long-arrow-right" />
-                      </a>
-                    </Link>
-                  </div>
+                <div className="instagram-overlay">
+                  <a
+                    href="https://www.instagram.com/shalimarfarms/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="instagram-link"
+                  >
+                    <FaInstagram size={40} />
+                    <span>View on Instagram</span>
+                  </a>
                 </div>
-                <div className="project-content">
-                  <div className="text text-white">
-                    <h3 className="title">
-                      <Link legacyBehavior href="/project-details">
-                        <a>Cutting Hedge</a>
-                      </Link>
-                    </h3>
-                  </div>
-                </div> */}
               </div>
             </div>
-            {/*====== Project Item ======*/}
-            <div className="single-project-item-four">
-              <div className="project-img">
+
+            {/*====== Instagram Post 4 ======*/}
+            <div className="single-instagram-item">
+              <div className="instagram-img-wrapper">
                 <img
                   src="/assets/images/instagram/5efb2b69-4126-4788-93c5-02c14755eba1.jpg"
-                  alt="Project Image"
+                  alt="Shalimar Farms Instagram Post"
                 />
-                {/* <div className="hover-content">
-                  <div className="number">04</div>
-                  <div className="text text-white">
-                    <h3 className="title">
-                      <Link legacyBehavior href="/project-details">
-                        <a>Water in Garden</a>
-                      </Link>
-                    </h3>
-                    <p>Professional Gardener for Garden Care</p>
-                    <Link legacyBehavior href="/project-details">
-                      <a className="icon-btn">
-                        <i className="fal fa-long-arrow-right" />
-                      </a>
-                    </Link>
-                  </div>
-                </div>
-                <div className="project-content">
-                  <div className="text text-white">
-                    <h3 className="title">
-                      <Link legacyBehavior href="/project-details">
-                        <a>Plants Greenhouse</a>
-                      </Link>
-                    </h3>
-                  </div>
-                </div> */}
-              </div>
-            </div>
-          </Slider>
-        </div>
-      </section>
-      <section className="video-section">
-        {/*====== Hero Wrapper One ======*/}
-        <div className="hero-wrapper-two d-flex justify-content-center">
-          {/*====== Hero Slider ======*/}
-          <Slider
-            {...sliderProps.heroOne}
-            className="hero-slider-one"
-            style={{ width: "80%" }}
-          >
-            {/*====== Single Slider ======*/}
-            <div className="single-slider">
-              <div
-                className="image-layer bg_cover"
-                style={{
-                  backgroundImage:
-                    "url(/assets/images/hero/shalimar-website-thumbnail.jpg)",
-                }}
-              />
-              <div className="container">
-                <div className="row align-items-center">
-                  <div className="col-xl-7 col-lg-4">
-                    {/*====== Hero Play ======*/}
-                    <div className="hero-play float-lg-right">
-                      <a
-                        href="https://www.youtube.com/watch?v=ztg7Ya21xoQs"
-                        className="video-popup"
-                      >
-                        <i className="fas fa-play" />
-                      </a>
-                    </div>
-                  </div>
+                <div className="instagram-overlay">
+                  <a
+                    href="https://www.instagram.com/shalimarfarms/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="instagram-link"
+                  >
+                    <FaInstagram size={40} />
+                    <span>View on Instagram</span>
+                  </a>
                 </div>
               </div>
             </div>
+
+            {/*====== Add more posts as needed ======*/}
+
           </Slider>
+
+          {/*====== Call to Action ======*/}
+          <div className="row justify-content-center mt-50">
+            <div className="col-lg-12 text-center">
+              <div className="social-cta-buttons">
+                <a
+                  href="https://www.instagram.com/shalimarfarms/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-social instagram-btn"
+                >
+                  <FaInstagram size={24} />
+                  <span>Follow on Instagram</span>
+                </a>
+                <a
+                  href="https://www.youtube.com/@shalimarfarms"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-social youtube-btn"
+                >
+                  <FaYoutube size={24} />
+                  <span>Subscribe on YouTube</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
 
       {/*Instagram and Youtube Section*/}
       {/*====== Start CTA Section  ======*/}
       <section
+        id="cta"
         className="cta-bg-section bg_cover mt-5 pt-100 pb-50 p-r z-1"
         style={{ backgroundImage: "url(assets/images/bg/cta-bg-1.jpg)" }}
       >
@@ -838,11 +657,12 @@ const Index2 = () => {
                   consultation to help you understand the true Kota standard,
                   lineage, and care.
                 </p>
-                <Link legacyBehavior href="/team">
-                  <a className="main-btn golden-btn">
-                    Schedule a Private Visit
-                  </a>
-                </Link>
+                <button
+                  onClick={handleShowContact}
+                  className="main-btn golden-btn"
+                >
+                  Schedule a Private Visit
+                </button>
               </div>
             </div>
             <div className="col-lg-7">

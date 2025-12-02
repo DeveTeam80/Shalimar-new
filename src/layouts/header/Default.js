@@ -26,7 +26,7 @@ const Default = () => {
                 <Link legacyBehavior href="/">
                   <a className="brand-logo">
                     <img
-                      src="assets/images/logo/logo.png"
+                      src="assets/images/logo/logo-light.png"
                       alt="Site Logo"
                     />
                   </a>
@@ -88,7 +88,7 @@ const Default = () => {
                   </select>
                 </div> */}
                 <div className="menu-button d-xl-block d-none">
-                  <Link legacyBehavior href="/contact">
+                  <Link legacyBehavior href="#cta">
                     <a className="main-btn primary-btn">Contact Us</a>
                   </Link>
                 </div>

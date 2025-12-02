@@ -156,7 +156,7 @@ const Default = () => {
                 <p className="wow fadeInRight color-2" data-wow-delay=".3s">
                   Developed & Designed by{" "}
                   <a 
-                    href="https://visionaryservices.in" 
+                    href="https://www.visionarybizz.com/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                   >
